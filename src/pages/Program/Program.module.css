@@ -1,0 +1,152 @@
+.pageContainer {
+  padding: 24px 20px 80px 20px;
+  min-height: 100vh;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.daysList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dayCard {
+  background: var(--color-card);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  cursor: pointer;
+  transition: transform 0.2s;
+  border: 1px solid var(--color-border);
+}
+
+.dayCard:active {
+  transform: scale(0.98);
+}
+
+.locked {
+  opacity: 0.6;
+  background: #f8fafc;
+  cursor: not-allowed;
+}
+
+.completed {
+  border-color: var(--color-success);
+}
+
+.dayHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dayInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dayNumber {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.checkIcon {
+  color: var(--color-success);
+}
+
+.lockIcon {
+  color: var(--color-text-secondary);
+}
+
+.exercisesList {
+  margin-top: 16px;
+  border-top: 1px solid var(--color-border);
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.exerciseItem {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.exerciseTitle {
+  font-weight: 600;
+  color: var(--color-text-main);
+  font-size: 15px;
+}
+
+.exerciseDesc {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+.videoPlaceholder {
+  background: #e2e8f0;
+  height: 160px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  gap: 8px;
+}
+
+.playIcon {
+  color: var(--color-primary);
+}
+
+.completeButton {
+  padding: 12px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  width: 100%;
+}
+
+.btnCompleted {
+  background-color: var(--color-success);
+  cursor: default;
+}
+
+.dayObjective {
+  background-color: var(--color-bg-light);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--color-text-main);
+  border-left: 4px solid var(--color-primary);
+}
+
+.dayMessage {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-bottom: 8px;
+}

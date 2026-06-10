@@ -1,0 +1,131 @@
+.pageContainer {
+  padding: 24px 20px 80px 20px; /* 80px bottom for nav bar */
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.greeting {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+}
+
+.progressSection {
+  margin-bottom: 32px;
+  background: var(--color-card);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.progressTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.progressValue {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-success);
+}
+
+.progressBarContainer {
+  height: 10px;
+  background-color: var(--color-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background-color: var(--color-success);
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+}
+
+.nextActionSection {
+  margin-bottom: 24px;
+}
+
+.card {
+  background: var(--color-primary);
+  padding: 24px;
+  border-radius: 20px;
+  color: var(--color-white);
+  box-shadow: 0 10px 20px rgba(41, 113, 159, 0.2);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.dayBadge {
+  background: rgba(255,255,255,0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.statusText {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.cardDesc {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 24px;
+}
+
+.primaryButton {
+  width: 100%;
+  padding: 16px;
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  transition: transform 0.2s;
+}
+
+.primaryButton:active {
+  transform: scale(0.98);
+}

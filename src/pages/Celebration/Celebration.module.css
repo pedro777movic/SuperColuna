@@ -1,0 +1,138 @@
+.pageContainer {
+  padding: 40px 20px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3a8a 0%, var(--color-primary) 100%);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  top: 10%;
+  font-size: 80px;
+  opacity: 0.2;
+  animation: float 3s ease-in-out infinite;
+}
+
+.header {
+  margin-bottom: 32px;
+  z-index: 10;
+}
+
+.mainIcon {
+  color: #fbbf24;
+  margin-bottom: 16px;
+  animation: pop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.statsCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 10;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.statRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.statRow:last-child {
+  border-bottom: none;
+}
+
+.statLabel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+}
+
+.statValue {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.statValueBad {
+  font-weight: 700;
+  font-size: 18px;
+  color: #fca5a5;
+}
+
+.messageBox {
+  font-size: 15px;
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 40px;
+  padding: 0 16px;
+  z-index: 10;
+}
+
+.primaryButton {
+  width: 100%;
+  padding: 18px;
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  z-index: 10;
+}
+
+.secondaryButton {
+  width: 100%;
+  padding: 16px;
+  background-color: transparent;
+  color: var(--color-white);
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.3);
+  z-index: 10;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pop {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
