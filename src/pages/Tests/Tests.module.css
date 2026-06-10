@@ -2,10 +2,13 @@
   padding: 24px 20px 40px 20px;
   min-height: 100vh;
   background-color: var(--color-bg-light);
+  position: relative;
+  z-index: 1;
 }
 
 .header {
   margin-bottom: 24px;
+  animation: fadeIn 0.5s ease-out;
 }
 
 .title {
@@ -20,6 +23,7 @@
   color: var(--color-text-secondary);
 }
 
+/* Question List */
 .questionsList {
   display: flex;
   flex-direction: column;
@@ -31,7 +35,7 @@
   background: var(--color-card);
   padding: 16px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 .questionLabel {
@@ -66,6 +70,7 @@
   transform: scale(1.1);
 }
 
+/* Primary Button */
 .primaryButton {
   width: 100%;
   padding: 16px;
@@ -76,12 +81,14 @@
   font-weight: 700;
   border: none;
   box-shadow: 0 4px 12px rgba(41, 113, 159, 0.2);
+  transition: transform 0.2s;
 }
 
 .primaryButton:active {
   transform: scale(0.98);
 }
 
+/* Empty State */
 .emptyState {
   display: flex;
   flex-direction: column;
@@ -89,46 +96,203 @@
   justify-content: center;
   height: 60vh;
   text-align: center;
-  gap: 20px;
+  gap: 12px;
 }
 
+.emptyEmoji {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.emptyText {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-bottom: 12px;
+}
+
+/* Summary Grid */
 .summaryGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+  animation: slideUp 0.5s ease-out 0.1s both;
 }
 
 .summaryBox {
   background: var(--color-card);
-  padding: 20px;
-  border-radius: 12px;
+  padding: 16px 8px;
+  border-radius: 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--color-border);
 }
 
-.iconPrimary { color: var(--color-primary); margin-bottom: 8px; }
-.iconSuccess { color: var(--color-success); margin-bottom: 8px; }
+.iconPrimary { color: var(--color-primary); margin-bottom: 6px; }
+.iconSuccess { color: var(--color-success); margin-bottom: 6px; }
+.iconTeal { color: var(--color-teal); margin-bottom: 6px; }
+.iconGold { color: var(--color-gold); margin-bottom: 6px; }
 
 .summaryValue {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 800;
   color: var(--color-text-main);
+  line-height: 1;
 }
 
 .summaryLabel {
+  font-size: 10px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* Circular Progress */
+.circularCard {
+  background: var(--color-card);
+  border-radius: 18px;
+  padding: 28px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--color-border);
+  animation: slideUp 0.5s ease-out 0.15s both;
+}
+
+.circularContainer {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  margin-bottom: 12px;
+}
+
+.circularSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.circularText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circularPercent {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-text-main);
+  line-height: 1;
+}
+
+.circularLabel {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.circularCaption {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+/* Perceived Evolution */
+.perceivedCard {
+  background: var(--color-card);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--color-border);
+  animation: slideUp 0.5s ease-out 0.2s both;
+}
+
+.perceivedTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: 14px;
+}
+
+.perceivedBarTrack {
+  height: 10px;
+  background: #e8f5e9;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.perceivedBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-teal), var(--color-success));
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+}
+
+.perceivedRow {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.perceivedValue {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-teal);
+}
+
+.perceivedLabel {
   font-size: 13px;
   color: var(--color-text-secondary);
 }
 
+/* Chart Card */
+.chartCard {
+  background: var(--color-card);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--color-border);
+  animation: slideUp 0.5s ease-out 0.25s both;
+}
+
+.chartTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: 2px;
+}
+
+.chartSubtitle {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin-bottom: 16px;
+}
+
+.chartContainer {
+  width: 100%;
+  height: 180px;
+}
+
+/* Comparison Card */
 .comparisonCard {
   background: var(--color-card);
   padding: 24px;
   border-radius: 16px;
-  margin-bottom: 32px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--color-border);
+  animation: slideUp 0.5s ease-out 0.3s both;
 }
 
 .comparisonTitle {
@@ -168,10 +332,11 @@
 .motivationalText {
   margin-top: 24px;
   padding: 16px;
-  background: #f0fdf4;
+  background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
   color: #166534;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 14px;
   font-style: italic;
   text-align: center;
+  border: 1px solid #d1fae5;
 }

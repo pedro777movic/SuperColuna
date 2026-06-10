@@ -1,12 +1,30 @@
 :root {
   --color-primary: #29719F;
+  --color-primary-dark: #1e5a80;
+  --color-primary-light: #3a8bbf;
   --color-success: #4CAF50;
+  --color-success-light: #81c784;
   --color-white: #FFFFFF;
   --color-bg-light: #F5F7FA;
+  --color-bg-warm: #f0f7f4;
   --color-text-secondary: #6B7280;
   --color-text-main: #1F2937;
   --color-card: #FFFFFF;
   --color-border: #E5E7EB;
+
+  /* Health / Recovery accent tones */
+  --color-teal: #0d9488;
+  --color-teal-light: #ccfbf1;
+  --color-mint: #a7f3d0;
+  --color-gold: #f59e0b;
+  --color-gold-light: #fef3c7;
+  --color-gold-dark: #d97706;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #29719F 0%, #1e5a80 100%);
+  --gradient-health: linear-gradient(135deg, #0d9488 0%, #29719F 100%);
+  --gradient-card: linear-gradient(135deg, #29719F 0%, #2d8ab8 50%, #1e5a80 100%);
+  --gradient-gold: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
 
   --font-family-main: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -37,6 +55,22 @@ body {
   overflow-x: hidden;
 }
 
+/* Spine watermark — subtle anatomical identity */
+#root::after {
+  content: '';
+  position: fixed;
+  bottom: 80px;
+  right: -30px;
+  width: 120px;
+  height: 400px;
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 300' fill='%2329719F'%3E%3C!-- Vertebrae chain --%3E%3Cellipse cx='30' cy='20' rx='18' ry='10'/%3E%3Crect x='26' y='28' width='8' height='12' rx='3'/%3E%3Cellipse cx='30' cy='52' rx='20' ry='11'/%3E%3Crect x='26' y='61' width='8' height='12' rx='3'/%3E%3Cellipse cx='30' cy='85' rx='21' ry='12'/%3E%3Crect x='26' y='95' width='8' height='13' rx='3'/%3E%3Cellipse cx='30' cy='120' rx='22' ry='12'/%3E%3Crect x='26' y='130' width='8' height='13' rx='3'/%3E%3Cellipse cx='30' cy='155' rx='22' ry='12'/%3E%3Crect x='26' y='165' width='8' height='13' rx='3'/%3E%3Cellipse cx='30' cy='190' rx='20' ry='11'/%3E%3Crect x='26' y='199' width='8' height='12' rx='3'/%3E%3Cellipse cx='30' cy='223' rx='18' ry='10'/%3E%3Crect x='26' y='231' width='8' height='11' rx='3'/%3E%3Cellipse cx='30' cy='254' rx='16' ry='9'/%3E%3Crect x='27' y='261' width='6' height='10' rx='3'/%3E%3Cellipse cx='30' cy='282' rx='12' ry='8'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -62,4 +96,38 @@ button {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-text-secondary);
+}
+
+/* ===== Global Keyframes ===== */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes unlockBounce {
+  0% { transform: scale(0.6); opacity: 0; }
+  50% { transform: scale(1.12); }
+  70% { transform: scale(0.95); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
